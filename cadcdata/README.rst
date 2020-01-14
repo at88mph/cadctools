@@ -10,29 +10,25 @@ Access library and client for astronomical data hosted at the Canadian Astronomy
 
 
 
-Common Options for ``GET/PUT/DELETE``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-``COMMON-OPTIONS`` are:
+Common Options (``COMMON-OPTIONS``) for ``GET/PUT/DELETE``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-``[-h | --help]``   Show the help message
+.. table:: Common Optional Arguments
 
-``[-d | --debug]``   Enable DEBUG messages
-
-``[-v | --verbose]`` Verbose messages
-
-``[-q | --quiet]``   Silent all output
-
-``[--cert CERT]``    Location of your X509 certificate to use for authentication (unencrypted, in PEM format)
-
-``[--host HOST]``    Base hostname for services - used mainly for testing (default: www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca)
-
-``[--resource-service-id REGISTRY_SERVICE_ID]`` Resource service identifier (default ivo://cadc.nrc.ca/minoc)
-
-``[-n]``              Use .netrc in $HOME for authentication
-
-``[--netrc-file NETRC_FILE]``  NetRC file to use for authentication
-
-``[[-u | --user] USER]``    Name of user to authenticate. Note: application prompts for the corresponding password!
+    =============================================== =============================================
+    Option                                          Description
+    =============================================== =============================================
+    ``[-h | --help]``                               Show the help message
+    ``[-d | --debug]``                              Enable DEBUG messages
+    ``[-v | --verbose]``                            Verbose messages
+    ``[-q | --quiet]``                              Silent all output
+    ``[--cert CERT]``                               Location of your X509 certificate to use for authentication (unencrypted, in PEM format)
+    ``[--host HOST]``                               Base hostname for services - used mainly for testing (default: www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca)
+    ``[--resource-service-id REGISTRY_SERVICE_ID]`` Resource service identifier (default ivo://cadc.nrc.ca/minoc)
+    ``[-n]``                                        Use .netrc in $HOME for authentication
+    ``[--netrc-file NETRC_FILE]``                   NetRC file to use for authentication
+    ``[[-u | --user] USER]``                        Name of user to authenticate. Note: application prompts for the corresponding password!
+    =============================================== =============================================
 
 
 Usage for ``GET``
