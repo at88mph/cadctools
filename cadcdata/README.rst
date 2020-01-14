@@ -37,22 +37,6 @@ Retrieve files from a CADC site.
 
 usage:  ``cadc-data get COMMON-OPTIONS OPTIONS resource-id [resource-id ...]``
 
-Where ``OPTIONS`` are:
-
-``[--base-resource-id BASE_RESOURCE_ID]``
-
-``[-o OUTPUT]``
-
-``[--cutout [CUTOUT [CUTOUT ...]]]``
-
-``[--nomd5]``
-
-``[-z]``
-
-``[--wcs]``
-
-``[--fhead]``
-
 
 .. table:: Positional Arguments
 
@@ -62,7 +46,7 @@ Where ``OPTIONS`` are:
    ``resource-id``   The URI of the resource(s) to PUT/GET/DELETE
    ================= =============================================
 
-.. table:: Optional Arguments
+.. table:: Optional Arguments (``OPTIONS``)
 
     ========================================= =============================================
     Option                                    Description
