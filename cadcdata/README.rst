@@ -10,8 +10,9 @@ Access library and client for astronomical data hosted at the Canadian Astronomy
 
 
 
-Common Options for ``GET/PUT/DELETE``:
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Common Options for ``GET/PUT/DELETE``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``COMMON-OPTIONS`` are:
 
 ``[-h | --help]``   Show the help message
 
@@ -34,68 +35,69 @@ Common Options for ``GET/PUT/DELETE``:
 ``[[-u | --user] USER]``    Name of user to authenticate. Note: application prompts for the corresponding password!
 
 
-Usage for ``GET``:
-~~~~~~~~~~~~~~~~~~
-
+Usage for ``GET``
+~~~~~~~~~~~~~~~~~
 Retrieve files from a CADC site.
 
-:code:
-    usage: ``cadc-data get OPTIONS resource-id ...``
+usage:  ``cadc-data get COMMON-OPTIONS OPTIONS resource-id [resource-id ...]``
 
-    Where ``OPTIONS`` are:
-    
-    ``[--base-resource-id BASE_RESOURCE_ID]``
+Where ``OPTIONS`` are:
 
-    ``[-o OUTPUT]``
-    
-    ``[--cutout [CUTOUT [CUTOUT ...]]]``
-    
-    ``[--nomd5]``
+``[--base-resource-id BASE_RESOURCE_ID]``
 
-    ``[-z]``
+``[-o OUTPUT]``
 
-    ``[--wcs]``
-    
-    ``[--fhead]``
+``[--cutout [CUTOUT [CUTOUT ...]]]``
 
-    
+``[--nomd5]``
 
-    **Positional arguments**:
-    
-    ``resource-id              The URI of the resource(s) to PUT/GET/DELETE``
+``[-z]``
+
+``[--wcs]``
+
+``[--fhead]``
 
 
-    **Optional arguments**:
+.. table:: Positional Arguments
 
-    ``--cutout [CUTOUT [CUTOUT ...]]`` Specify one or multiple extension and/or pixel range cutout operations to be performed. Use cfitsio syntax
+   ================= =============================================
+   \                 Description
+   ================= =============================================
+   ``resource-id``   The URI of the resource(s) to PUT/GET/DELETE
+   ================= =============================================
 
-    ``[-z | --decompress]``  Decompress the data (gzip only)
+.. table:: Optional Arguments
 
-    ``[--fhead]``         Return the FITS header information
+    ========================================= =============================================
+    Option                                    Description
+    ========================================= =============================================
+    ``[--base-resource-id BASE-RESOURCE-ID]`` Base resource ID for batch ``GET`` requests
+    ``[[-o | --output] OUTPUT``               Space-separated list of destination files (quotes required for multiple elements)
+    ``[--cutout [CUTOUT [CUTOUT ...]]]``      Specify one or multiple extension and/or pixel range cutout operations to be performed. Use cfitsio syntax
+    ``[--nomd5]``                             Do not perform md5 check at the end of transfer
+    ``[-z | --decompress]``                   Decompress the data (gzip only)
+    ``[--wcs]``                               Return the World Coordinate System (WCS) information
+    ``[--fhead]``                             Return the FITS header information
+    ========================================= =============================================
 
-    ``[--nomd5]``         Do not perform md5 check at the end of transfer
-
-    ``[[-o | --output] OUTPUT``  Space-separated list of destination files (quotes required for multiple elements)
-
-    ``[--wcs]``           Return the World Coordinate System (WCS) information
 
 
-    **Examples**:
-    
-    - Anonymously getting a public file: 
-        ``cadc-data get -v cadc:GEMINI/00aug02_002.fits``
+**Examples**:
 
-    - Use certificate to get a cutout and save it to a file:
-        ``cadc-data get --cert ~/.ssl/cadcproxy.pem -o /tmp/700000o-cutout.fits --cutout [1] cadc:CFHT/700000o``
+- Anonymously getting a public file: 
+    ``cadc-data get -v cadc:GEMINI/00aug02_002.fits``
 
-    - Use default netrc file ($HOME/.netrc) to get FITS header of a file:
-        ``cadc-data get -v -n --fhead cadc:GEMINI/00aug02_002.fits``
+- Use certificate to get a cutout and save it to a file:
+    ``cadc-data get --cert ~/.ssl/cadcproxy.pem -o /tmp/700000o-cutout.fits --cutout [1] cadc:CFHT/700000o``
 
-    - Use a different netrc file to download wcs information:
-        ``cadc-data get -d --netrc ~/mynetrc -o /tmp/700000o-wcs.fits --wcs cadc:CFHT/700000o``
+- Use default netrc file ($HOME/.netrc) to get FITS header of a file:
+    ``cadc-data get -v -n --fhead cadc:GEMINI/00aug02_002.fits``
 
-    - Connect as user to download two files and uncompress them (prompt for password if user not in $HOME/.netrc):
-        ``cadc-data get -v -u auser -z cadc:GEMINI/00aug02_002.fits 00aug02_003.fits``
+- Use a different netrc file to download wcs information:
+    ``cadc-data get -d --netrc ~/mynetrc -o /tmp/700000o-wcs.fits --wcs cadc:CFHT/700000o``
+
+- Connect as user to download two files and uncompress them (prompt for password if user not in $HOME/.netrc):
+    ``cadc-data get -v -u auser -z --base-resource-id cadc:GEMINI 00aug02_002.fits 00aug02_003.fits``
 
 
 
