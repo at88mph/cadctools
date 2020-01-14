@@ -23,7 +23,7 @@ Common Options (``COMMON-OPTIONS``) for ``GET/PUT/DELETE``
     ``[-v | --verbose]``                            Verbose messages
     ``[-q | --quiet]``                              Silent all output
     ``[--cert CERT]``                               Location of your X509 certificate to use for authentication (unencrypted, in PEM format)
-    ``[--host HOST]``                               Base hostname for services - used mainly for testing (default: www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca)
+    ``[--host HOST]``                               Base hostname for services - used mainly for testing but useful for specifying alternate Registry (default: www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca).  Uses ``https``.
     ``[--resource-service-id REGISTRY_SERVICE_ID]`` Resource service identifier (default ivo://cadc.nrc.ca/minoc)
     ``[-n]``                                        Use .netrc in $HOME for authentication
     ``[--netrc-file NETRC_FILE]``                   NetRC file to use for authentication
