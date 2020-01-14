@@ -103,3 +103,4 @@ Where ``OPTIONS`` are:
 
 Usage for ``PUT``:
 ~~~~~~~~~~~~~~~~~~
+Coming soon.
