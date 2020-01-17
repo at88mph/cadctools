@@ -78,3 +78,48 @@ usage:  ``cadc-data get COMMON-OPTIONS OPTIONS resource-id [resource-id ...]``
 - Connect as user to download two files and uncompress them (prompt for password if user not in $HOME/.netrc):
     ``cadc-data get -v -u auser -z cadc:GEMINI/00aug02_002.fits cadc:GEMINI/00aug02_003.fits``
 
+
+Usage for ``PUT``:
+~~~~~~~~~~~~~~~~~~
+Upload files to the Storage System.
+
+usage:  ``cadc-data put COMMON-OPTIONS OPTIONS base-resource-id file [file ...]``
+
+
+.. table:: Positional Arguments
+
+   ========================================= =============================================
+   \                 Description
+    ======================================== =============================================
+   ``base-resource-id``                      Base resource ID to prepend to file names
+   ``file``                                  The file(s) to upload.
+   ========================================= =============================================
+
+.. table:: Optional Arguments (``OPTIONS``)
+
+    ========================================= ====================================================
+    Option                                    Description
+    ========================================= ====================================================
+    ``[--nomd5]``                             Do not perform md5 check at the end of transfer
+    ``[-t | --type]``                         MIME type to set.  Deduced by default
+    ``[-e |  --encoding]``                    MIME encoding to set.  Deduced by default
+    ========================================= ====================================================
+
+
+
+**Examples**:
+
+- Anonymously getting a public file: 
+    ``cadc-data put -v cadc:GEMINI/00aug02_002.fits``
+
+- Use default netrc file ($HOME/.netrc) to get FITS header of a file:
+    ``cadc-data put -v -n --fhead cadc:GEMINI/00aug02_002.fits``
+
+- Use a different netrc file to upload:
+    ``cadc-data put -d --netrc ~/mynetrc cadc:CFHT /tmp/700000o-wcs.fits``
+
+- Connect as user to upload two files (prompt for password if user not in $HOME/.netrc):
+    ``cadc-data put -v -u auser cadc:GEMINI 00aug02_002.fits 00aug02_003.fits``
+
+- Upload a file using a certificate for authentication:
+    ``cadc-data put --cert ~/.ssl/proxycert.pem
