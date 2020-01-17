@@ -112,8 +112,8 @@ usage:  ``cadc-data put COMMON-OPTIONS PUT-OPTIONS base-resource-id file [file .
 - Anonymously getting a public file: 
     ``cadc-data put -v cadc:GEMINI/00aug02_002.fits``
 
-- Use default netrc file ($HOME/.netrc) to get FITS header of a file:
-    ``cadc-data put -v -n --fhead cadc:GEMINI/00aug02_002.fits``
+- Use default netrc file ($HOME/.netrc):
+    ``cadc-data put -v -n cadc:GEMINI/00aug02_002.fits``
 
 - Use a different netrc file to upload:
     ``cadc-data put -d --netrc ~/mynetrc cadc:CFHT /tmp/700000o-wcs.fits``
