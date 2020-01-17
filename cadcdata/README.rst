@@ -86,6 +86,14 @@ Upload files to the Storage System.
 usage:  ``cadc-data put COMMON-OPTIONS PUT-OPTIONS base-resource-id file [file ...]``
 
 
+.. table:: PUT Positional Arguments
+
+   ========================================= =============================================
+   \                                         Description
+   ========================================= =============================================
+   ``base-resource-id``                      Base resource ID to prepend to file names
+   ``file``                                  The file(s) to upload.
+   ========================================= =============================================
    
 .. table:: PUT Optional Arguments (``PUT-OPTIONS``)
 
