@@ -83,3 +83,6 @@ Usage for ``PUT``:
 ~~~~~~~~~~~~~~~~~~
 Upload files to the Storage System.
 
+usage:  ``cadc-data put COMMON-OPTIONS OPTIONS base-resource-id file [file ...]``
+
+
