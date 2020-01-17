@@ -35,10 +35,10 @@ Usage for ``GET``
 ~~~~~~~~~~~~~~~~~
 Retrieve files from the Storage System.
 
-usage:  ``cadc-data get COMMON-OPTIONS OPTIONS resource-id [resource-id ...]``
+usage:  ``cadc-data get COMMON-OPTIONS GET-OPTIONS resource-id [resource-id ...]``
 
 
-.. table:: Positional Arguments
+.. table:: GET Positional Arguments
 
    ================= =============================================
    \                 Description
@@ -46,7 +46,7 @@ usage:  ``cadc-data get COMMON-OPTIONS OPTIONS resource-id [resource-id ...]``
    ``resource-id``   The URI of the resource(s) to PUT/GET/DELETE
    ================= =============================================
 
-.. table:: Optional Arguments (``OPTIONS``)
+.. table:: GET Optional Arguments (``GET-OPTIONS``)
 
     ========================================= =============================================
     Option                                    Description
@@ -83,6 +83,42 @@ Usage for ``PUT``:
 ~~~~~~~~~~~~~~~~~~
 Upload files to the Storage System.
 
-usage:  ``cadc-data put COMMON-OPTIONS OPTIONS base-resource-id file [file ...]``
+usage:  ``cadc-data put COMMON-OPTIONS PUT-OPTIONS base-resource-id file [file ...]``
+
+.. table:: PUT Positional Arguments
+
+   ========================================= =============================================
+   \                 Description
+    ======================================== =============================================
+   ``base-resource-id``                      Base resource ID to prepend to file names
+   ``file``                                  The file(s) to upload.
+   ========================================= =============================================
+   
+.. table:: PUT Optional Arguments (``PUT-OPTIONS``)
+
+    ========================================= ====================================================
+    Option                                    Description
+    ========================================= ====================================================
+    ``[--nomd5]``                             Do not perform md5 check at the end of transfer
+    ``[-t | --type]``                         MIME type to set.  Deduced by default
+    ``[-e |  --encoding]``                    MIME encoding to set.  Deduced by default
+    ========================================= ====================================================
 
 
+
+**Examples**:
+
+- Anonymously getting a public file: 
+    ``cadc-data put -v cadc:GEMINI/00aug02_002.fits``
+
+- Use default netrc file ($HOME/.netrc) to get FITS header of a file:
+    ``cadc-data put -v -n --fhead cadc:GEMINI/00aug02_002.fits``
+
+- Use a different netrc file to upload:
+    ``cadc-data put -d --netrc ~/mynetrc cadc:CFHT /tmp/700000o-wcs.fits``
+
+- Connect as user to upload two files (prompt for password if user not in $HOME/.netrc):
+    ``cadc-data put -v -u auser cadc:GEMINI 00aug02_002.fits 00aug02_003.fits``
+
+- Upload a file using a certificate for authentication:
+    ``cadc-data put --cert ~/.ssl/proxycert.pem
