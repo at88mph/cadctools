@@ -1,21 +1,21 @@
 Usage per version
 =================
 
-`cadcdata - 1.3.1`_
+`cadcdata - 1.3.1 (Current)`_
   `Usage for GET`_
 
   `Usage for PUT`_
 
   `Usage for INFO`_
 
-`cadcdata - 1.4.0`_
+`cadcdata - 1.4.0 (Proposed)`_
     `Usage for CP`_
 
     `Usage for DELETE`_
 
 
-cadcdata - 1.3.1
-================
+cadcdata - 1.3.1 (Current)
+==========================
 
 .. image:: https://img.shields.io/pypi/v/cadcdata.svg   
     :target: https://pypi.python.org/pypi/cadcdata
@@ -168,8 +168,8 @@ Examples
     ``cadc-data info -u auser GEMINI 00aug02_002.fits 00aug02_003.fits``
 
 
-cadcdata - 1.4.0
-================
+cadcdata - 1.4.0 (Proposed)
+===========================
 
 
 Common Options (``COMMON-OPTIONS``) for ``GET/PUT/DELETE``
