@@ -124,7 +124,3 @@ usage:  ``cadc-data put COMMON-OPTIONS PUT-OPTIONS base-resource-id file [file .
 - Upload a file using a certificate for authentication:
     ``cadc-data put --cert ~/.ssl/proxycert.pem cadc:JCMT scuba2.fits``
 
-
-Usage for ``INFO``:
-~~~~~~~~~~~~~~~~~~
-Retrieve file information from the Storage System.
