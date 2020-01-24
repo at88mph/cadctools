@@ -5,7 +5,7 @@ Usage per version
   `Usage for GET`_
 
   `Usage for PUT`_
-  
+
   `Usage for INFO`_
 
 `cadcdata - 1.4.0`_
@@ -257,8 +257,8 @@ Examples
     ``cadc-data cp --cert ~/.ssl/proxycert.pem /mnt/processed/scuba-2.fits cadc:JCMT/scuba2.fits``
 
 
-Usage for ``DELETE``:
-~~~~~~~~~~~~~~~~~~~~~
+Usage for ``DELETE``
+~~~~~~~~~~~~~~~~~~~~
 
 Retrieve files from the Storage System.
 
