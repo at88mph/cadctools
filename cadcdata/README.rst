@@ -2,8 +2,16 @@ Usage per version
 =================
 
 `cadcdata - 1.3.1`_
+  `Usage for GET`_
+
+  `Usage for PUT`_
+  
+  `Usage for INFO`_
 
 `cadcdata - 1.4.0`_
+    `Usage for CP`_
+
+    `Usage for DELETE`_
 
 
 cadcdata - 1.3.1
@@ -186,7 +194,7 @@ Common Options (``COMMON-OPTIONS``) for ``GET/PUT/DELETE``
 
 
 Usage for ``CP``
-~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
 Retrieve files from the Storage System.
 
 usage:  ``cadc-data cp COMMON-OPTIONS CP-OPTIONS source destination``
