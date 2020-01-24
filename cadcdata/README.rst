@@ -8,7 +8,7 @@ Usage per version
 
   `Usage for INFO`_
 
-`cadcdata - 1.4.0 (Proposed)`_
+`cadcdata - 2.0.0 (Proposed)`_
     `Usage for CP`_
 
     `Usage for DELETE`_
@@ -168,7 +168,7 @@ Examples
     ``cadc-data info -u auser GEMINI 00aug02_002.fits 00aug02_003.fits``
 
 
-cadcdata - 1.4.0 (Proposed)
+cadcdata - 2.0.0 (Proposed)
 ===========================
 
 
