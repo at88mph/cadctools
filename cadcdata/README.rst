@@ -1,6 +1,8 @@
 Usage per version
 =================
 
+`Common Options amongst versions`_
+
 `cadcdata - 1.3.1 (Current)`_
   `Usage for GET`_
 
@@ -14,18 +16,8 @@ Usage per version
     `Usage for DELETE`_
 
 
-cadcdata - 1.3.1 (Current)
-==========================
-
-.. image:: https://img.shields.io/pypi/v/cadcdata.svg   
-    :target: https://pypi.python.org/pypi/cadcdata
-
-Canadian Astronomy Data Centre - data access
-
-Access library and client for astronomical data hosted at the Canadian Astronomy Data Centre
-
-Common Options (``COMMON-OPTIONS``) for ``GET/PUT/INFO``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Common Options amongst versions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. table:: Common Optional Arguments
 
@@ -43,6 +35,17 @@ Common Options (``COMMON-OPTIONS``) for ``GET/PUT/INFO``
     ``[--netrc-file NETRC_FILE]``                   NetRC file to use for authentication
     ``[(-u | --user) USER]``                        Name of user to authenticate. Note: application prompts for the corresponding password!
     =============================================== =============================================
+
+cadcdata - 1.3.1 (Current)
+==========================
+
+.. image:: https://img.shields.io/pypi/v/cadcdata.svg   
+    :target: https://pypi.python.org/pypi/cadcdata
+
+Canadian Astronomy Data Centre - data access
+
+Access library and client for astronomical data hosted at the Canadian Astronomy Data Centre
+
 
 Usage for ``GET``
 ~~~~~~~~~~~~~~~~~
@@ -172,27 +175,6 @@ cadcdata - 2.0.0 (Proposed)
 ===========================
 
 
-Common Options (``COMMON-OPTIONS``) for ``GET/PUT/DELETE``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. table:: Common Optional Arguments
-
-    =============================================== =============================================
-    Option                                          Description
-    =============================================== =============================================
-    ``[-h | --help]``                               Show the help message
-    ``[-d | --debug]``                              Enable DEBUG messages
-    ``[-v | --verbose]``                            Verbose messages
-    ``[-q | --quiet]``                              Silent all output
-    ``[--cert CERT]``                               Location of your X509 certificate to use for authentication (unencrypted, in PEM format)
-    ``[--host HOST]``                               Base hostname for services - used mainly for testing but useful for specifying alternate Registry (default: www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca).  Uses ``https``.
-    ``[--resource-id RESOURCE_ID]``                 Resource service identifier to lookup service to use (default ivo://cadc.nrc.ca/data)
-    ``[-n]``                                        Use .netrc in $HOME for authentication
-    ``[--netrc-file NETRC_FILE]``                   NetRC file to use for authentication
-    ``[(-u | --user) USER]``                        Name of user to authenticate. Note: application prompts for the corresponding password!
-    =============================================== =============================================
-
-
 Usage for ``CP``
 ~~~~~~~~~~~~~~~~
 Retrieve files from the Storage System.
@@ -200,13 +182,18 @@ Retrieve files from the Storage System.
 usage:  ``cadc-data cp COMMON-OPTIONS CP-OPTIONS source destination``
 
 
+** **Note**: First version of ``cp`` is limited to operating on a single file.
+
+
 .. table:: Positional Arguments
 
    ================= =============================================
    \                 Description
    ================= =============================================
-   ``source``        [file, uri] The source of the data copy to PUT/GET/DELETE
-   ``destination``   [file, uri, directory] The destination of the data PUT/GET
+   ``source``        [file] The source of the data copy to PUT
+   ``source``        [uri] The URI of the file to GET
+   ``destination``   [uri] The destination URI of the PUT
+   ``destination``   [file | directory] The destination of the file to GET
    ================= =============================================
 
 .. table:: Optional Arguments (``CP-OPTIONS``)
@@ -257,10 +244,10 @@ Examples
     ``cadc-data cp --cert ~/.ssl/proxycert.pem /mnt/processed/scuba-2.fits cadc:JCMT/scuba2.fits``
 
 
-Usage for ``DELETE``
+Usage for ``RM``
 ~~~~~~~~~~~~~~~~~~~~
 
-Retrieve files from the Storage System.
+Remove files from the Storage System.
 
 usage:  ``cadc-data rm COMMON-OPTIONS source [source... ]``
 
