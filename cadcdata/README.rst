@@ -13,7 +13,7 @@ Usage per version
 `cadcdata - 2.0.0 (Proposed)`_
     `Usage for CP`_
 
-    `Usage for DELETE`_
+    `Usage for RM`_
 
 
 Common Options amongst versions
@@ -235,6 +235,8 @@ Examples
 
 - Use a different netrc file to upload to the CFHT namespace bucket:
     ``cadc-data cp -d --netrc ~/mynetrc /tmp/700000o-wcs.fits cadc:CFHT/``
+
+- Use a different netrc file to upload to the CFHT namespace bucket with a custom name:
     ``cadc-data cp -d --netrc ~/mynetrc /tmp/700000o-wcs.fits cadc:CFHT/mynewfile.700000o.wcs.fits``
 
 - Connect as user to upload (PUT) a file (prompt for password if user not in $HOME/.netrc):
@@ -265,7 +267,7 @@ usage:  ``cadc-data rm COMMON-OPTIONS source [source... ]``
 Examples
 ^^^^^^^^
 
-- Use certificate to DELETE the file for the given URI:
+- Use certificate to RM the file for the given URI:
     ``cadc-data rm --cert ~/.ssl/cadcproxy.pem cadc:CFHT/700000o.fits.fz``
 
 - Use default netrc file ($HOME/.netrc) to DELETE two files:
