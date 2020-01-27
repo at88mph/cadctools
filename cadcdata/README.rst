@@ -191,9 +191,11 @@ usage:  ``cadc-data cp COMMON-OPTIONS CP-OPTIONS source destination``
    \                 Description
    ================= =============================================
    ``source``        [file] The source of the data copy to PUT
-   ``source``        [uri] The URI of the file to GET
+                     
+                     [uri] The URI of the file to GET
    ``destination``   [uri] The destination URI of the PUT
-   ``destination``   [file | directory] The destination of the file to GET
+                     
+                     [file | directory] The destination of the file to GET
    ================= =============================================
 
 .. table:: Optional Arguments (``CP-OPTIONS``)
